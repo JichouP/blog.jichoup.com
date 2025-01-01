@@ -1,0 +1,27 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Create New Blog Post",
+            "type": "shell",
+            "command": "node",
+            "args": [
+                "${workspaceFolder}/.vscode/create-blog-post.js",
+                "${input:blogTitle}"
+            ],
+            "problemMatcher": [],
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            }
+        }
+    ],
+    "inputs": [
+        {
+            "id": "blogTitle",
+            "type": "promptString",
+            "description": "Enter the blog post title",
+            "default": "my-new-post"
+        }
+    ]
+}
