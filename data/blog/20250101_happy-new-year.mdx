@@ -1,8 +1,8 @@
 ---
-title: "あけましておめでとうございます"
+title: "ブログを移行した"
 date: "2025-01-01"
 lastmod: "2025-01-01"
-tags: [technology]
+tags: ["technology"]
 draft: false
 layout: "PostLayout"
 ---
@@ -19,9 +19,20 @@ Gatsbyはとにかくビルド時間が長いのが辛かったですね。
 Next.jsではイイカンジのテンプレートがあったので、それを使わせてもらってます。
 [timlrx/tailwind-nextjs-starter-blog | GitHub](https://github.com/timlrx/tailwind-nextjs-starter-blog)
 
+このブログのソースはここにあります。ご参考までに。
+[JichouP/blog.jichoup.com | GitHub](https://github.com/JichouP/blog.jichoup.com)
+
+## うれしポイント
+
 静的サイトとしてビルドできるので GitHub Pages にデプロイできるのが嬉しいですね。
 しかも、静的サイトのくせに、タグの管理や検索ができたり、スタンプやコメントを使えたりします。
-ビルド時にタグの処理や検索のインデックスを作成したり、GitHub の Discussion を使ってコメントを管理することで両立できているんですね。賢い。
+ビルド時にタグの処理や検索のインデックスを作成したり、コメント管理をGitHub の Discussion のような外部サービスに切り出すことで両立できているんですね。賢い。
+
+コメントの管理には giscus を使っています。
+[giscus](https://giscus.app/ja)
+
+やってることは Next.js の SSG なので、GitHub Actions のテンプレートをそのまま使えるのも嬉しい。
+キャッシュも効いてるので、1分ちょいでビルドできます。（Gatsby だと 3分くらいかかってた記憶。。。）
 
 ## 追加したい機能
 
