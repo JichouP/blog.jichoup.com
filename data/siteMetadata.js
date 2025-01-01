@@ -34,7 +34,8 @@ const siteMetadata = {
       // We use an env variable for this site to avoid other users cloning our analytics ID
       umamiWebsiteId: process.env.NEXT_PUBLIC_UMAMI_ID, // e.g. 123e4567-e89b-12d3-a456-426614174000
       // You may also need to overwrite the script if you're storing data in the US - ex:
-      src: 'https://cloud.umami.is/script.js',
+      src: '/static/x/x',
+      // src: 'https://cloud.umami.is/script.js',
       // Remember to add 'us.umami.is' in `next.config.js` as a permitted domain for the CSP
     },
     // plausibleAnalytics: {
