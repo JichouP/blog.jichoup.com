@@ -5,7 +5,8 @@ import { useState } from 'react'
 import siteMetadata from '@/data/siteMetadata'
 
 export default function Comments({ slug }: { slug: string }) {
-  const [loadComments, setLoadComments] = useState(false)
+  // デフォルトでコメントをロードするように設定
+  const [loadComments, setLoadComments] = useState(true)
 
   if (!siteMetadata.comments?.provider) {
     return null
