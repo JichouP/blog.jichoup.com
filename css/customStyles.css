@@ -1,0 +1,11 @@
+.main-content h2::after {
+  content: '';
+  display: block;
+  height: 1px;
+  background: rgb(229, 231, 235);
+  margin-top: 8px;
+}
+
+.dark .main-content h2::after {
+  background: rgb(55, 65, 81);
+}
