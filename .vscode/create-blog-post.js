@@ -15,7 +15,8 @@ const filePath = path.join(blogDir, fileName)
 
 // Create blog post template
 const template = `---
-title: "${blogTitle}"
+title: ""
+summary: ""
 date: "${date.toISOString().split('T')[0]}"
 lastmod: "${date.toISOString().split('T')[0]}"
 tags: []
