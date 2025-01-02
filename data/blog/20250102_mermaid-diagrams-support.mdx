@@ -1,0 +1,149 @@
+---
+title: "Mermaid Diagram をサポートした"
+summary: "Markdown中で図が書けるように、Mermaid をサポートしました"
+date: "2025-01-02"
+lastmod: "2025-01-02"
+tags: ["tech"]
+layout: "PostLayout"
+draft: false
+---
+
+Mermaid をサポートしました。
+
+## 実装
+
+Mermaid のドキュメントに remark の Integrations が紹介されていたので、これを使用。
+[Integrations | Mermaid](https://mermaid.js.org/ecosystem/integrations-community.html#:~:text=remark-,remark%2Dmermaidjs,-Sphinx)
+
+### インストール
+
+これを参考にインストール。Playwright は、Mermaid のレンダリングに使用される。
+[remcohaszing/remark-mermaidjs | GitHub](https://github.com/remcohaszing/remark-mermaidjs)
+
+```bash
+yarn add remark-mermaidjs
+yarn add playwright
+npx playwright install --with-deps chromium
+```
+
+あとはプラグインを挿すだけ。
+
+```diff
++ import remarkMermaid from 'remark-mermaidjs'
+...
+    remarkPlugins: [
+      remarkExtractFrontmatter,
+      remarkGfm,
+      remarkCodeTitles,
+      remarkMath,
+      remarkImgToJsx,
+      remarkAlert,
+      remarkBreaks,
++     remarkMermaid,
+    ],
+```
+
+シンプルでいいですね。
+
+## 出来なかったこと
+
+アーキテクチャ図で、AWS のアイコンを使いたかったけど、うまくロード出来なかった。
+必要になったときにまた試してみます。（Figmaでいい気がするけど）
+
+参考：[Registering icon pack in mermaid | Mermaid](https://mermaid.js.org/config/icons.html)
+
+## サンプル
+
+こんな感じで図が書けるようになった。（サンプルは公式ドキュメントより）
+
+### フローチャート
+
+```mermaid
+flowchart TD
+    A[Start] --> B{Is it?}
+    B -->|Yes| C[OK]
+    C --> D[Rethink]
+    D --> B
+    B ---->|No| E[End]
+```
+
+### シーケンス図
+
+```mermaid
+sequenceDiagram
+    participant Alice
+    participant Bob
+    Alice->>John: Hello John, how are you?
+    loop HealthCheck
+        John->>John: Fight against hypochondria
+    end
+    Note right of John: Rational thoughts <br/>prevail!
+    John-->>Alice: Great!
+    John->>Bob: How about you?
+    Bob-->>John: Jolly good!
+```
+
+### ER図
+
+```mermaid
+---
+title: Order example
+---
+erDiagram
+    CUSTOMER ||--o{ ORDER : places
+    ORDER ||--|{ LINE-ITEM : contains
+    CUSTOMER }|..|{ DELIVERY-ADDRESS : uses
+```
+
+### ガントチャート
+
+```mermaid
+gantt
+dateFormat  YYYY-MM-DD
+title Adding GANTT diagram to mermaid
+excludes weekdays 2014-01-10
+
+section A section
+Completed task            :done,    des1, 2014-01-06,2014-01-08
+Active task               :active,  des2, 2014-01-09, 3d
+Future task               :         des3, after des2, 5d
+Future task2               :         des4, after des3, 5d
+```
+
+### マインドマップ
+
+```mermaid
+mindmap
+    root((mindmap))
+        Origins
+        Long history
+        Popularisation
+            British popular psychology author Tony Buzan
+        Research
+        On effectiveness<br/>and features
+        On Automatic creation
+            Uses
+                Creative techniques
+                Strategic planning
+                Argument mapping
+        Tools
+        Pen and paper
+        Mermaid
+```
+
+### アーキテクチャ
+
+```mermaid
+architecture-beta
+    group api(cloud)[API]
+
+    service db(database)[Database] in api
+    service disk1(disk)[Storage] in api
+    service disk2(disk)[Storage] in api
+    service server(server)[Server] in api
+
+    db:L -- R:server
+    disk1:T -- B:server
+    disk2:T -- B:db
+```
+
