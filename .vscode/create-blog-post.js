@@ -20,6 +20,7 @@ summary: ""
 date: "${date.toISOString().split('T')[0]}"
 lastmod: "${date.toISOString().split('T')[0]}"
 tags: []
+layout: "PostLayout"
 draft: true
 ---
 
