@@ -4,7 +4,7 @@ const siteMetadata = {
   title: 'JichouP Blog',
   author: 'JichouP',
   headerTitle: 'JichouP Blog',
-  description: 'JichouPの日記',
+  description: 'JichouPの手記',
   language: 'ja-JP',
   theme: 'light', // system, dark or light
   siteUrl: 'https://blog.jichoup.com',
