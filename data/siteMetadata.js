@@ -5,7 +5,7 @@ const siteMetadata = {
   author: 'JichouP',
   headerTitle: 'JichouP Blog',
   description: 'JichouPの日記',
-  language: 'jp-JP',
+  language: 'ja-JP',
   theme: 'light', // system, dark or light
   siteUrl: 'https://blog.jichoup.com',
   siteRepo: 'https://github.com/JichouP/blog.jichoup.com',
@@ -23,7 +23,7 @@ const siteMetadata = {
   // instagram: 'https://www.instagram.com',
   // medium: 'https://medium.com',
   // bluesky: 'https://bsky.app/',
-  locale: 'jp-JP',
+  locale: 'ja-JP',
   // set to true if you want a navbar fixed to the top
   stickyNav: true,
   analytics: {
