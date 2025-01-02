@@ -58,5 +58,6 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     steps:
+      - uses: Kesin11/actions-timeline@v2
       - id: deployment
         uses: actions/deploy-pages@v4
