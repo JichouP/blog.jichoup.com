@@ -34,6 +34,8 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-nextjs-${{ hashFiles('**/yarn.lock') }}-
       - run: yarn
+      - name: Install Playwright
+        run: npx playwright install --with-deps chromium
       - run: yarn build
         env:
           EXPORT: 1

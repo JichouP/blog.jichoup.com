@@ -15,6 +15,7 @@ import {
   extractTocHeadings,
 } from 'pliny/mdx-plugins/index.js'
 import remarkBreaks from 'remark-breaks'
+import remarkMermaid from 'remark-mermaidjs'
 // Rehype packages
 import rehypeSlug from 'rehype-slug'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
@@ -159,6 +160,7 @@ export default makeSource({
       remarkImgToJsx,
       remarkAlert,
       remarkBreaks,
+      remarkMermaid,
     ],
     rehypePlugins: [
       rehypeSlug,

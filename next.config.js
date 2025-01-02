@@ -94,6 +94,13 @@ module.exports = () => {
         use: ['@svgr/webpack'],
       })
 
+      // config.resolve.fallback = {
+      //   ...config.resolve.fallback,
+      //   tty: false,
+      //   os: false,
+      //   util: false,
+      // }
+
       return config
     },
   })
