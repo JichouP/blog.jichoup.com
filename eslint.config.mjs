@@ -67,4 +67,13 @@ export default [
       '@typescript-eslint/ban-ts-comment': 'off',
     },
   },
+  {
+    files: ['.vscode/**/*.js'],
+    languageOptions: {
+      parser: 'espree',
+      parserOptions: {
+        project: null,
+      },
+    },
+  },
 ]
