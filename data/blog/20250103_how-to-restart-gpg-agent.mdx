@@ -3,7 +3,7 @@ title: "GPG Agent の再起動のしかた"
 summary: "gpgconf --kill gpg-agent"
 date: "2025-01-03"
 lastmod: "2025-01-03"
-tags: []
+tags: ["tech", "gpg", "git"]
 layout: "PostLayout"
 draft: false
 ---
@@ -23,4 +23,4 @@ gpgconf --kill gpg-agent
 そのまま Passphrase を入力してしまうと、`git commit` が進んでしまうので、Ctrl+C で中断するのだが、GPG Agent はずっと Passphrase の入力を待機するためか、その後にコミットできなくなってしまう。
 そうなったときに GPG Agent の再起動が必要となる。
 
-割と頻繁にやらかすので、すぐに再起動できるように alias に登録しておこうかなぁ。。。
+割と頻繁にやらかすので、すぐに再起動できるように bash の alias に登録しておこうかなぁ。。。
