@@ -1,5 +1,6 @@
 const fs = require('fs')
 const path = require('path')
+const { exec } = require('child_process')
 
 // Get command line argument for blog title
 const blogTitle = process.argv[2] || 'my-new-post'
@@ -35,6 +36,15 @@ if (!fs.existsSync(blogDir)) {
 try {
   fs.writeFileSync(filePath, template)
   console.log(`Created blog post: ${filePath}`)
+
+  // Open the file in VSCode
+  exec(`code "${filePath}"`, (error) => {
+    if (error) {
+      console.error('Error opening VSCode:', error)
+      process.exit(1)
+    }
+    console.log('Opened file in VSCode')
+  })
 } catch (error) {
   console.error('Error creating blog post:', error)
   process.exit(1)
