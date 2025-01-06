@@ -6,7 +6,7 @@ const siteMetadata = {
   headerTitle: 'JichouP Blog',
   description: 'JichouPの手記',
   language: 'ja-JP',
-  theme: 'light', // system, dark or light
+  theme: 'system', // system, dark or light
   siteUrl: 'https://blog.jichoup.com',
   siteRepo: 'https://github.com/JichouP/blog.jichoup.com',
   siteLogo: `${process.env.BASE_PATH || ''}/static/images/logo.png`,
